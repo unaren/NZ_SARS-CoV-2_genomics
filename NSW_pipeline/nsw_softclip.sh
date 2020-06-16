@@ -10,13 +10,13 @@ while getopts 'r:d:n:h' opt; do
     r) miseq_reads_directory=$OPTARG ;;
     d) designation_directory=$OPTARG ;;
     n) name=$OPTARG ;;
-    h) echo "Usage: bash new_softclip.sh -r <fullpath miseq_reads_directory> -d <fullpath designation_directory> -n <sequence ending ie _R1.fastq.gz etc> -h <help>"
+    h) echo "Usage: bash nsw_softclip.sh -r <fullpath miseq_reads_directory> -d <fullpath designation_directory> -n <sequence ending ie _R1.fastq.gz etc> -h <help>"
         exit
         ;;
   esac
 done
 
-
+mkdir ${designation_directory}
 mkdir ${designation_directory}/trimmed
 mkdir ${designation_directory}/bwa_align
 mkdir ${designation_directory}/vcf
